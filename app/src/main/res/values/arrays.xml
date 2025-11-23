@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tag_colors">
+        <item>Red</item>
+        <item>Green</item>
+        <item>Blue</item>
+        <item>Purple</item>
+        <item>Orange</item>
+        <item>Pink</item>
+        <item>Teal</item>
+        <item>Brown</item>
+    </string-array>
+
+    <string-array name="tag_color_values">
+        <item>#FF5733</item>
+        <item>#33FF57</item>
+        <item>#3357FF</item>
+        <item>#F333FF</item>
+        <item>#FF8333</item>
+        <item>#FF33A1</item>
+        <item>#33FFF6</item>
+        <item>#8B4513</item>
+    </string-array>
+
+    <string-array name="tag_color_names">
+        <item>tag_red</item>
+        <item>tag_green</item>
+        <item>tag_blue</item>
+        <item>tag_purple</item>
+        <item>tag_orange</item>
+        <item>tag_pink</item>
+        <item>tag_teal</item>
+        <item>tag_brown</item>
+    </string-array>
+</resources>

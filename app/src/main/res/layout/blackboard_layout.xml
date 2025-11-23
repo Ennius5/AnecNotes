@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/blackboard_background"
+    android:padding="16dp"
+    android:layout_margin="8dp"
+    android:elevation="4dp">
+
+    <TextView
+        android:id="@+id/blackboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Classroom Seat Plan"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp" />
+
+</LinearLayout>

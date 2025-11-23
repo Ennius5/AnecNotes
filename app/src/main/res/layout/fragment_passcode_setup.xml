@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Up Passcode"
+        android:textSize="24sp"
+        android:layout_marginBottom="32dp" />
+
+    <EditText
+        android:id="@+id/passcodeInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberPassword"
+        android:maxLength="4"
+        android:hint="Enter 4-digit passcode"
+        android:gravity="center"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/confirmPasscodeInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberPassword"
+        android:maxLength="4"
+        android:hint="Confirm passcode"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/setupButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Passcode"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>

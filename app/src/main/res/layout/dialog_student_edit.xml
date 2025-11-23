@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/edit_lrn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="LRN"
+        android:padding="8dp" />
+
+    <EditText
+        android:id="@+id/edit_last_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Last Name"
+        android:padding="8dp" />
+
+    <EditText
+        android:id="@+id/edit_first_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="First Name"
+        android:padding="8dp" />
+
+    <EditText
+        android:id="@+id/edit_middle_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Middle Name"
+        android:padding="8dp" />
+
+    <!-- Add Gender Spinner -->
+    <Spinner
+        android:id="@+id/edit_sex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp" />
+
+    <EditText
+        android:id="@+id/edit_seat_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Seat Number"
+        android:inputType="number"
+        android:padding="8dp" />
+
+</LinearLayout>

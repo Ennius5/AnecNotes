@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/note_item_background"
+    android:layout_margin="8dp">
+
+    <TextView
+        android:id="@+id/note_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/note_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Behavior"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/note_antecedent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Antecedent"
+        android:layout_marginTop="2dp" />
+
+    <TextView
+        android:id="@+id/note_actions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Actions"
+        android:layout_marginTop="2dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/edit_note_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Edit"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/delete_note_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hold to Delete"
+            android:layout_marginStart="4dp" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/delete_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:backgroundTint="@color/tag_red" />
+
+</LinearLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Horizontal Scroll View for buttons -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:padding="8dp">
+
+        <!-- Header buttons -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                android:layout_margin="8dp"
+                android:minWidth="120dp" />
+
+            <Button
+                android:id="@+id/edit_classroom_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit Classroom"
+                android:layout_margin="8dp"
+                android:minWidth="120dp" />
+
+            <Button
+                android:id="@+id/manage_students_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manage Students"
+                android:layout_margin="8dp"
+                android:minWidth="120dp" />
+
+            <Button
+                android:id="@+id/toggle_view_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Switch to Table View"
+                android:layout_margin="8dp"
+                android:minWidth="120dp" />
+            <Button
+                android:id="@+id/export_notes_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Export to Excel"
+                android:layout_marginStart="8dp"
+                android:drawableStart="@android:drawable/ic_menu_save"
+                android:backgroundTint="@color/tag_green" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Container for seat plan/table view -->
+    <FrameLayout
+        android:id="@+id/classroom_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>

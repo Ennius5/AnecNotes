@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add New Note"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/student_name_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Student: "
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Tags Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Tags (Max 5)"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/manage_tags_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manage Tags"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/selected_tags_count"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Selected: 0/5"
+                android:gravity="center_vertical"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+
+        <!-- Selected Tags Preview -->
+        <LinearLayout
+            android:id="@+id/selected_tags_preview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
+            android:minHeight="40dp"
+            android:background="@drawable/tags_preview_background"
+            android:padding="8dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/selected_tags_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No tags selected"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="16dp"
+
+            android:background="@android:color/darker_gray">
+
+            <LinearLayout
+                android:id="@+id/tags_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp" />
+
+        </ScrollView>
+
+        <!-- Note Content -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Note Content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/note_content_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:hint="Enter your note here..."
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/save_note_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Save Note"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/design_default_color_primary"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/cancel_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cancel"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="@color/design_default_color_error"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

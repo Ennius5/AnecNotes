@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- Search Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="8dp"
+        android:elevation="4dp">
+
+        <EditText
+            android:id="@+id/search_edittext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Search students by name or LRN..."
+            android:textColorHint="@color/teacher_desk_brown"
+            android:textColor="@color/teacher_desk_brown"
+            android:inputType="text"
+            android:maxLines="1"
+            android:background="@android:color/transparent"
+            android:padding="12dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_search"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="Search"
+             />
+
+    </LinearLayout>
+
+    <!-- Results Count -->
+    <TextView
+        android:id="@+id/results_count_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Showing all students" />
+
+    <!-- Students Table -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:id="@+id/students_table"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                android:shrinkColumns="*" />
+
+        </HorizontalScrollView>
+
+    </ScrollView>
+
+</LinearLayout>

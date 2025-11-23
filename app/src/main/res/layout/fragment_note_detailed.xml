@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="16dp"
+    android:id="@+id/scroll_view"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add New Anecdotal Note"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/student_name_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Student: "
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Date -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date of Incident *"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/date_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="YYYY-MM-DD"
+            android:inputType="date"
+            android:imeOptions="actionNext"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Setting Events -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Known or Suspected Setting Events"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/setting_events_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:hint="What was happening in the environment? Any known triggers or context?"
+            android:inputType="textMultiLine|textCapSentences"
+            android:imeOptions="actionNext"
+            android:gravity="top"
+            android:scrollbars="vertical"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Antecedent Trigger -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Antecedent Trigger *"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/antecedent_trigger_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:hint="What happened right before the behavior?"
+            android:inputType="textMultiLine|textCapSentences"
+            android:imeOptions="actionNext"
+            android:gravity="top"
+            android:scrollbars="vertical"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Behavior -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Behavior *"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/behavior_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:hint="Exactly what the student did (be specific and objective)"
+            android:inputType="textMultiLine|textCapSentences"
+            android:imeOptions="actionNext"
+            android:gravity="top"
+            android:scrollbars="vertical"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Consequences/Responses -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Consequences/Responses"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/consequences_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:hint="How did adults and peers respond?"
+            android:inputType="textMultiLine|textCapSentences"
+            android:imeOptions="actionNext"
+            android:gravity="top"
+            android:scrollbars="vertical"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Actions Taken -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Action(s) Taken"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/actions_taken_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:hint="What interventions or follow-up actions were taken?"
+            android:inputType="textMultiLine|textCapSentences"
+            android:imeOptions="actionDone"
+            android:gravity="top"
+            android:scrollbars="vertical"
+            android:layout_marginBottom="24dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Images"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/images_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <Button
+                android:id="@+id/add_image_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Image"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/cancel_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cancel"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/save_note_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Save Note"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="@color/colorPrimary" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

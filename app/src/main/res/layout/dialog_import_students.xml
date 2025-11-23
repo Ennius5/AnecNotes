@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Classroom"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <Spinner
+        android:id="@+id/classroom_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Row (1-based)"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/start_row_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_marginBottom="16dp" />
+
+    <CheckBox
+        android:id="@+id/skip_invalid_checkbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Skip rows with missing data"
+        android:checked="true"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/mapping_info_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:text="Column Mapping Info"
+        android:textSize="12sp"
+        android:background="#f0f0f0"
+        android:padding="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/configure_mapping_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Configure Column Mapping" />
+
+</LinearLayout>

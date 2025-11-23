@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blackboard_green">#2E7D32</color>
+    <color name="blackboard_border">#1B5E20</color>
+    <color name="teacher_desk_brown">#5D4037</color>
+    <color name="classroom_background">#EFEBE9</color>
+    <color name="primary_color">#2196F3</color>
+    <color name="secondary_color">#FF9800</color>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="tag_red">#FF5733</color>
+    <color name="tag_green">#33FF57</color>
+    <color name="tag_blue">#3357FF</color>
+    <color name="tag_purple">#F333FF</color>
+    <color name="tag_orange">#FF8333</color>
+    <color name="tag_pink">#FF33A1</color>
+    <color name="tag_teal">#33FFF6</color>
+    <color name="tag_brown">#8B4513</color>
+</resources>
