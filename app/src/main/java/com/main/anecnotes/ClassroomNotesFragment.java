@@ -22,7 +22,7 @@ public class ClassroomNotesFragment extends Fragment {
     private static final String ARG_CLASSROOM_ID = "classroom_id";
     private static final String ARG_CLASSROOM_NAME = "classroom_name";
 
-    private int classroomId;
+    public int classroomId;
     private String classroomName;
     private DatabaseHelper dbHelper;
     private LinearLayout notesContainer;
@@ -67,6 +67,7 @@ public class ClassroomNotesFragment extends Fragment {
         addNoteBtn.setOnClickListener(v -> {
             NoteFragment noteFragment = NoteFragment.newInstanceForClassroom(
                     classroomId, classroomName, -1);
+            noteFragment.classroomId = classroomId;
             ((MainActivity) requireActivity()).navigateToFragment(noteFragment);
         });
 
@@ -126,6 +127,7 @@ public class ClassroomNotesFragment extends Fragment {
             // Navigate to NoteFragment in edit mode for classroom
             NoteFragment noteFragment = NoteFragment.newInstanceForClassroom(
                     classroomId, classroomName, note.getNoteId());
+            noteFragment.classroomId =classroomId;
             requireActivity().getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, noteFragment)
                     .commit();

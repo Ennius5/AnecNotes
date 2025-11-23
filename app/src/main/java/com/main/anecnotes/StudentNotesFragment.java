@@ -69,6 +69,7 @@ public class StudentNotesFragment extends Fragment {
         addNoteBtn.setOnClickListener(v -> {
             // Navigate to NoteFragment to add new note
             NoteFragment noteFragment = NoteFragment.newInstance(studentId, studentName, -1);
+            noteFragment.classroomId = classroomID;
             requireActivity().getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, noteFragment)
                     .commit();
@@ -76,7 +77,7 @@ public class StudentNotesFragment extends Fragment {
 
         backBtn.setOnClickListener(v -> {
             // Go back to classroom detail, this shit won't go back to the classroom though!
-            ClassroomDetailFragment detailFragment = ClassroomDetailFragment.newInstance(classroomID);
+            ClassroomDetailFragment detailFragment = ClassroomDetailFragment.newInstance(classroomID);//////AAAAAAAAAAAAAAAAAAAAAA
             ((MainActivity) requireActivity()).navigateToFragment(detailFragment);
         });
 
@@ -128,6 +129,7 @@ public class StudentNotesFragment extends Fragment {
         editBtn.setOnClickListener(v -> {
             // Navigate to NoteFragment in edit mode
             NoteFragment noteFragment = NoteFragment.newInstance(studentId, studentName, note.getNoteId());
+            noteFragment.classroomId=classroomID;
             requireActivity().getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, noteFragment)
                     .commit();

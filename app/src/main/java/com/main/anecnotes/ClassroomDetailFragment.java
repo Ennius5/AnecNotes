@@ -36,7 +36,7 @@ public class ClassroomDetailFragment extends Fragment {
     private static final String TAG = "ClassroomDetailFragment";
     private static final String ARG_CLASSROOM_ID = "classroom_id";
     private static final int EXPORT_PERMISSION_REQUEST_CODE = 1001;
-    private int classroomId;
+    public int classroomId;
     private boolean isTabularView = false;
     private AlertDialog progressDialog;
     private boolean isExportInProgress = false;

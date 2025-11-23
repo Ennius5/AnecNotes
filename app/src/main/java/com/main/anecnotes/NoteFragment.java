@@ -49,7 +49,6 @@ import java.util.Map;
 
 public class NoteFragment extends Fragment {
 
-
     private static final String ARG_STUDENT_ID = "student_id";
     private static final String ARG_STUDENT_NAME = "student_name";
     private static final String ARG_NOTE_ID = "note_id";
@@ -62,6 +61,7 @@ public class NoteFragment extends Fragment {
     private int studentId;
     private String studentName;
     private int noteId; // -1 for new note, existing ID for edit
+
     public Integer classroomId;
     private DatabaseHelper dbHelper;
     private boolean isEditMode = false;
@@ -189,6 +189,7 @@ public class NoteFragment extends Fragment {
                                     studentId,
                                     studentName
                             );
+                            notesFragment.classroomID = classroomId;
                             ((MainActivity) requireActivity()).navigateToFragment(notesFragment);
                         } else if (classroomId != -1) {
                             // This is a CLASSROOM note - go to ClassroomNotesFragment
@@ -231,6 +232,7 @@ public class NoteFragment extends Fragment {
                 } else if (studentId != -1) {
                     // If this was a student note, go back to student notes
                     StudentNotesFragment notesFragment = StudentNotesFragment.newInstance( studentId, studentName);
+                    notesFragment.classroomID = classroomId;
                     ((MainActivity) requireActivity()).navigateToFragment(notesFragment);
                 } else {
                     // Fallback to main menu
@@ -246,6 +248,7 @@ public class NoteFragment extends Fragment {
             // Same navigation logic as above but without saving
             if (studentId != -1) {
                 StudentNotesFragment notesFragment = StudentNotesFragment.newInstance(studentId, studentName);
+                notesFragment.classroomID=classroomId;
                 ((MainActivity) requireActivity()).navigateToFragment(notesFragment);
             } else if (classroomId != -1) {
                 ClassroomNotesFragment notesFragment = ClassroomNotesFragment.newInstance(classroomId, studentName);

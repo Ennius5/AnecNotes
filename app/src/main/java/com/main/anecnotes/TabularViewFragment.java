@@ -21,7 +21,7 @@ import java.util.List;
 public class TabularViewFragment extends Fragment {
 
     private static final String ARG_CLASSROOM_ID = "classroom_id";
-    private int classroomId;
+    public int classroomId;
     private DatabaseHelper dbHelper;
     private TableLayout tableLayout;
     private EditText searchEditText;
@@ -273,6 +273,7 @@ public class TabularViewFragment extends Fragment {
                 student.getFullName(),
                 -1
         );
+        noteFragment.classroomId=classroomId;
         requireActivity().getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, noteFragment)
 //                .addToBackStack(null)
@@ -284,6 +285,7 @@ public class TabularViewFragment extends Fragment {
                 student.getId(),
                 student.getFullName()
         );
+        notesFragment.classroomID = classroomId;
         requireActivity().getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, notesFragment)
 //                .addToBackStack(null)

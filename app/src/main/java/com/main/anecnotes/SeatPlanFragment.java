@@ -15,7 +15,8 @@ import java.util.List;
 public class SeatPlanFragment extends Fragment {
 
     private static final String ARG_CLASSROOM_ID = "classroom_id";
-    private int classroomId;
+
+    public int classroomId;
     private DatabaseHelper dbHelper;
     private LinearLayout seatContainer;
     private List<Student> students;
@@ -250,6 +251,7 @@ public class SeatPlanFragment extends Fragment {
                 classroomName,
                 -1
         );
+        noteFragment.classroomId = classroomId;
         requireActivity().getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, noteFragment)
 //                .addToBackStack(null)
@@ -467,6 +469,7 @@ public class SeatPlanFragment extends Fragment {
                                     student.getFullName(),
                                     -1
                             );
+                            noteFragment.classroomId=classroomId;
                             requireActivity().getSupportFragmentManager().beginTransaction()
                                     .replace(R.id.fragment_container, noteFragment)
 //                                    .addToBackStack(null)
