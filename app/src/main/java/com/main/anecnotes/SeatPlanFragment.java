@@ -1,6 +1,7 @@
 package com.main.anecnotes;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -481,6 +482,7 @@ public class SeatPlanFragment extends Fragment {
                                     student.getFullName()
                             );
                             notesFragment.classroomID = classroomId; //Hell yeah I hope this works out!
+                            Log.d("NAVIGATION SHIT"," line 485 SeatPlan Student notes fragment with classroom id of: "+ notesFragment.classroomID);
 
                             requireActivity().getSupportFragmentManager().beginTransaction()
                                     .replace(R.id.fragment_container, notesFragment)

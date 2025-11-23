@@ -12,6 +12,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
 import android.text.InputType;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -62,7 +63,7 @@ public class NoteFragment extends Fragment {
     private String studentName;
     private int noteId; // -1 for new note, existing ID for edit
 
-    public Integer classroomId;
+    public int classroomId= -1;
     private DatabaseHelper dbHelper;
     private boolean isEditMode = false;
 
@@ -111,7 +112,7 @@ public class NoteFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            classroomId = getArguments().getInt(ARG_CLASSROOM_ID, -1);
+            classroomId = getArguments().getInt(ARG_CLASSROOM_ID, classroomId);//TODOBUG SOURCE
             studentId = getArguments().getInt(ARG_STUDENT_ID, -1);
             studentName = getArguments().getString(ARG_STUDENT_NAME);
             noteId = getArguments().getInt(ARG_NOTE_ID, -1);
@@ -190,6 +191,8 @@ public class NoteFragment extends Fragment {
                                     studentName
                             );
                             notesFragment.classroomID = classroomId;
+                            Log.d("NAVIGATION SHIT","line 194 NoteFragment  Student notes fragment with classroom id of: "+ notesFragment.classroomID);
+
                             ((MainActivity) requireActivity()).navigateToFragment(notesFragment);
                         } else if (classroomId != -1) {
                             // This is a CLASSROOM note - go to ClassroomNotesFragment
@@ -233,6 +236,8 @@ public class NoteFragment extends Fragment {
                     // If this was a student note, go back to student notes
                     StudentNotesFragment notesFragment = StudentNotesFragment.newInstance( studentId, studentName);
                     notesFragment.classroomID = classroomId;
+                    Log.d("NAVIGATION SHIT","line 239 NoteFragment Classroom detail notes fragment with classroom id of: "+ notesFragment.classroomID);
+
                     ((MainActivity) requireActivity()).navigateToFragment(notesFragment);
                 } else {
                     // Fallback to main menu
@@ -249,9 +254,12 @@ public class NoteFragment extends Fragment {
             if (studentId != -1) {
                 StudentNotesFragment notesFragment = StudentNotesFragment.newInstance(studentId, studentName);
                 notesFragment.classroomID=classroomId;
+                Log.d("NAVIGATION SHIT","line 257 NoteFragment Student notes fragment with classroom id of: "+ notesFragment.classroomID);
                 ((MainActivity) requireActivity()).navigateToFragment(notesFragment);
             } else if (classroomId != -1) {
                 ClassroomNotesFragment notesFragment = ClassroomNotesFragment.newInstance(classroomId, studentName);
+                Log.d("NAVIGATION SHIT","notes fragment with classroom id of: "+ notesFragment.classroomId);
+                notesFragment.classroomId = classroomId;
                 ((MainActivity) requireActivity()).navigateToFragment(notesFragment);
             } else {
                 ((MainActivity) requireActivity()).navigateToMainMenu();

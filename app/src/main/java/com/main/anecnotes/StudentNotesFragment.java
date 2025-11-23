@@ -27,7 +27,7 @@ public class StudentNotesFragment extends Fragment {
     private DatabaseHelper dbHelper;
     private LinearLayout notesContainer;
 
-    public int classroomID = -1; //recorder
+    public int classroomID; //recorder
 
     public StudentNotesFragment() {
         // Required empty public constructor
@@ -64,12 +64,12 @@ public class StudentNotesFragment extends Fragment {
 
         studentNameTextView.setText("Notes for: " + studentName);
 
-        loadNotes();
 
         addNoteBtn.setOnClickListener(v -> {
             // Navigate to NoteFragment to add new note
             NoteFragment noteFragment = NoteFragment.newInstance(studentId, studentName, -1);
             noteFragment.classroomId = classroomID;
+            Log.d("NAVIGATION SHIT","line 72 StudentNotesFragment notes fragment with classroom id of: "+ noteFragment.classroomId);
             requireActivity().getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, noteFragment)
                     .commit();
@@ -78,9 +78,13 @@ public class StudentNotesFragment extends Fragment {
         backBtn.setOnClickListener(v -> {
             // Go back to classroom detail, this shit won't go back to the classroom though!
             ClassroomDetailFragment detailFragment = ClassroomDetailFragment.newInstance(classroomID);//////AAAAAAAAAAAAAAAAAAAAAA
+            detailFragment.classroomId = classroomID;
+            Log.d("NAVIGATION SHIT","line 82 StudentNotesFragment Classroom detail notes fragment with classroom id of: "+ detailFragment.classroomId);
+
             ((MainActivity) requireActivity()).navigateToFragment(detailFragment);
         });
 
+        loadNotes();
         return view;
     }
 
@@ -130,6 +134,7 @@ public class StudentNotesFragment extends Fragment {
             // Navigate to NoteFragment in edit mode
             NoteFragment noteFragment = NoteFragment.newInstance(studentId, studentName, note.getNoteId());
             noteFragment.classroomId=classroomID;
+            Log.d("NAVIGATION SHIT"," line 137 StudentNotesFragment Classroom detail notes fragment with classroom id of: "+ noteFragment.classroomId);
             requireActivity().getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, noteFragment)
                     .commit();
