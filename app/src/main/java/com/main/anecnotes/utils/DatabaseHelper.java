@@ -570,7 +570,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public List<Note> getNotesByClassroom(int classroomId) {
         List<Note> noteList = new ArrayList<>();
-        String selectQuery = "SELECT * FROM " + TABLE_NOTE + " WHERE " + COLUMN_STUDENT_ID_FK + " = " + classroomId + " AND " + COLUMN_NOTE_IS_DELETED + " = 0 ORDER BY " + COLUMN_NOTE_DATE + " DESC";
+        String selectQuery = "SELECT * FROM " + TABLE_NOTE + " WHERE " + COLUMN_CLASSROOM_ID_FK + " = " + classroomId + " AND " + COLUMN_NOTE_IS_DELETED + " = 0 ORDER BY " + COLUMN_NOTE_DATE + " DESC";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 

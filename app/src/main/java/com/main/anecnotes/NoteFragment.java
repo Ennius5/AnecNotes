@@ -100,7 +100,7 @@ public class NoteFragment extends Fragment {
         NoteFragment fragment = new NoteFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_CLASSROOM_ID, classroomId);
-        args.putInt(ARG_STUDENT_ID, -1);  // Explicitly set studentId to -1
+        args.putInt(ARG_STUDENT_ID, -1);  // Explicitly set studentId to -99
         args.putString(ARG_STUDENT_NAME, classroomName);
         args.putInt(ARG_NOTE_ID, noteId);
         fragment.setArguments(args);
