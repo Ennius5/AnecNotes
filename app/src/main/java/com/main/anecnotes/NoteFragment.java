@@ -192,6 +192,7 @@ public class NoteFragment extends Fragment {
                             );
                             notesFragment.classroomID = classroomId;
                             Log.d("NAVIGATION SHIT","line 194 NoteFragment  Student notes fragment with classroom id of: "+ notesFragment.classroomID);
+                            Log.d("NAVIGATION SHIT","line 195 NoteFragment  Potential bug here! Student ID->"+studentId);
 
                             ((MainActivity) requireActivity()).navigateToFragment(notesFragment);
                         } else if (classroomId != -1) {
@@ -200,6 +201,10 @@ public class NoteFragment extends Fragment {
                                     classroomId,
                                     studentName  // This is actually classroom name in this context
                             );
+                            Log.d("NAVIGATION SHIT","line 204 NoteFragment   Student ID->"+studentId);
+                            Log.d("NAVIGATION SHIT","line 205 NoteFragment   classroomID->"+classroomId);
+
+
                             ((MainActivity) requireActivity()).navigateToFragment(notesFragment);
                         } else {
                             // Fallback
@@ -210,10 +215,17 @@ public class NoteFragment extends Fragment {
                     Note note = new Note(0, date, settingEvents, antecedentTrigger, behavior, consequences, actionsTaken, creationDate);
                     long newNoteId;
 
-                    if (studentId != -1 && classroomId == -1) {
+                    if (studentId != -1) {
                         newNoteId = dbHelper.addNote(note, studentId, -1);
+                        Log.d("NAVIGATION SHIT","line 220 NoteFragment Potent bug?   classroomID->"+classroomId);
+                        Log.d("NAVIGATION SHIT","line 221 NoteFragment Potent bug?   studentID->"+studentId);
+                        Log.d("NAVIGATION SHIT","line 225 created a student Note?");
+
                     } else if (classroomId != -1) {
                         newNoteId = dbHelper.addNote(note, -1, classroomId);
+                        Log.d("NAVIGATION SHIT","line 225 created a classroom Note");
+                        Log.d("NAVIGATION SHIT","line 225 NoteFragment Potent bug?   classroomID->"+classroomId);
+                        Log.d("NAVIGATION SHIT","line 226 NoteFragment Potent bug?   studentID->"+studentId);
                     } else {
                         showToast("Error: Cannot determine note context");
                         return;
@@ -228,17 +240,32 @@ public class NoteFragment extends Fragment {
                     }
                 }
 
-                if (classroomId != -1) {
-                    // If this was a classroom note, go back to classroom notes
-                    ClassroomNotesFragment notesFragment = ClassroomNotesFragment.newInstance(classroomId, studentName);
-                    ((MainActivity) requireActivity()).navigateToFragment(notesFragment);
-                } else if (studentId != -1) {
+                if (studentId != -1) {
+//                    // If this was a classroom note, go back to classroom notes
+//                    Log.d("NAVIGATION SHIT","line 238 NoteFragment Potent bug?   classroomID->"+classroomId);
+//
+//                    ClassroomNotesFragment notesFragment = ClassroomNotesFragment.newInstance(classroomId, studentName);
+//                    ((MainActivity) requireActivity()).navigateToFragment(notesFragment);
                     // If this was a student note, go back to student notes
+
                     StudentNotesFragment notesFragment = StudentNotesFragment.newInstance( studentId, studentName);
                     notesFragment.classroomID = classroomId;
                     Log.d("NAVIGATION SHIT","line 239 NoteFragment Classroom detail notes fragment with classroom id of: "+ notesFragment.classroomID);
 
                     ((MainActivity) requireActivity()).navigateToFragment(notesFragment);
+                } else if (classroomId != -1) {
+                    // If this was a classroom note, go back to classroom notes
+                    Log.d("NAVIGATION SHIT","line 238 NoteFragment Potent bug?   classroomID->"+classroomId);
+
+                    ClassroomNotesFragment notesFragment = ClassroomNotesFragment.newInstance(classroomId, studentName);
+                    ((MainActivity) requireActivity()).navigateToFragment(notesFragment);
+//                    // If this was a student note, go back to student notes
+//
+//                    StudentNotesFragment notesFragment = StudentNotesFragment.newInstance( studentId, studentName);
+//                    notesFragment.classroomID = classroomId;
+//                    Log.d("NAVIGATION SHIT","line 239 NoteFragment Classroom detail notes fragment with classroom id of: "+ notesFragment.classroomID);
+//
+//                    ((MainActivity) requireActivity()).navigateToFragment(notesFragment);
                 } else {
                     // Fallback to main menu
                     ((MainActivity) requireActivity()).navigateToMainMenu();

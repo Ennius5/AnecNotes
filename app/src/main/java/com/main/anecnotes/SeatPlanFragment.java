@@ -471,6 +471,8 @@ public class SeatPlanFragment extends Fragment {
                                     -1
                             );
                             noteFragment.classroomId=classroomId;
+                            Log.d("NAVIGATION SHIT"," line 475 SeatPlan Student notes fragment with classroom id of: "+ noteFragment.classroomId);
+
                             requireActivity().getSupportFragmentManager().beginTransaction()
                                     .replace(R.id.fragment_container, noteFragment)
 //                                    .addToBackStack(null)
